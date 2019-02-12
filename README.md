@@ -1,4 +1,4 @@
-# Why open source your project
+# Why Open Source Your Project
 
 Short overview of the benefits of open sourcing your project.
 
@@ -11,7 +11,7 @@ A framework for easily creating beautiful presentations using HTML. [Check out t
 reveal.js comes with a broad range of features including [nested slides](https://github.com/hakimel/reveal.js#markup), [Markdown contents](https://github.com/hakimel/reveal.js#markdown), [PDF export](https://github.com/hakimel/reveal.js#pdf-export), [speaker notes](https://github.com/hakimel/reveal.js#speaker-notes) and a [JavaScript API](https://github.com/hakimel/reveal.js#api). There's also a fully featured visual editor and platform for sharing reveal.js presentations at [slides.com](https://slides.com?ref=github).
 
 
-## Table of contents
+## Table Of Contents
 
 - [Online Editor](#online-editor)
 - [Installation](#installation)
@@ -60,7 +60,7 @@ reveal.js comes with a broad range of features including [nested slides](https:/
 - [MathJax](#mathjax)
 - [License](#license)
 
-#### More reading
+#### More Reading
 
 - [Changelog](https://github.com/hakimel/reveal.js/releases): Up-to-date version history.
 - [Examples](https://github.com/hakimel/reveal.js/wiki/Example-Presentations): Presentations created with reveal.js, add your own!
@@ -77,7 +77,7 @@ Presentations are written using HTML or Markdown but there's also an online edit
 
 The **basic setup** is for authoring presentations only. The **full setup** gives you access to all reveal.js features and plugins such as speaker notes as well as the development tasks needed to make changes to the source.
 
-### Basic setup
+### Basic Setup
 
 The core of reveal.js is very easy to install. You'll simply need to download a copy of this repository and open the index.html file directly in your browser.
 
@@ -85,7 +85,7 @@ The core of reveal.js is very easy to install. You'll simply need to download a 
 2. Unzip and replace the example contents in index.html with your own
 3. Open index.html in a browser to view it
 
-### Full setup
+### Full Setup
 
 Some reveal.js features, like external Markdown and speaker notes, require that presentations run from a local web server. The following instructions will set up such a server as well as all of the development tasks needed to make edits to the reveal.js source code.
 
@@ -471,7 +471,7 @@ Reveal.addEventListener( 'ready', function( event ) {
 
 Note that we also add a `.ready` class to the `.reveal` element so that you can hook into this with CSS.
 
-### Auto-sliding
+### Auto-Sliding
 
 Presentations can be configured to progress through slides automatically, without any user input. To enable this you will need to tell the framework how many milliseconds it should wait between slides:
 
@@ -791,7 +791,7 @@ You can also use different in and out transitions for the same slide:
 </section>
 ```
 You can choose from `none`, `fade`, `slide`, `convex`, `concave` and `zoom`.
-### Internal links
+### Internal Links
 
 It's easy to link between slides. The first example below targets the index of another slide whereas the second targets a slide with an ID attribute (`<section id="some-slide">`):
 
@@ -852,7 +852,7 @@ The display order of fragments can be controlled using the `data-fragment-index`
 </section>
 ```
 
-### Fragment events
+### Fragment Events
 
 When a slide fragment is either shown or hidden reveal.js will dispatch an event.
 
@@ -867,7 +867,7 @@ Reveal.addEventListener( 'fragmenthidden', function( event ) {
 } );
 ```
 
-### Code syntax highlighting
+### Code Syntax Highlighting
 
 By default, Reveal is configured with [highlight.js](https://highlightjs.org/) for code syntax highlighting. To enable syntax highlighting, you'll have to load the highlight plugin ([plugin/highlight/highlight.js](plugin/highlight/highlight.js)) and a highlight.js CSS theme (Reveal comes packaged with the zenburn theme: [lib/css/zenburn.css](lib/css/zenburn.css)).
 
@@ -894,7 +894,7 @@ Below is an example with clojure code that will be syntax highlighted. When the 
 </section>
 ```
 
-### Slide number
+### Slide Number
 
 If you would like to display the page number of the current slide you can do so using the `slideNumber` and `showSlideNumber` configuration values.
 
@@ -916,7 +916,7 @@ Reveal.configure({ slideNumber: 'c/t' });
 Reveal.configure({ showSlideNumber: 'speaker' });
 ```
 
-### Overview mode
+### Overview Mode
 
 Press »ESC« or »O« keys to toggle the overview mode on and off. While you're in this mode, you can still navigate between slides,
 as if you were at 1,000 feet above your presentation. The overview mode comes with a few API hooks:
@@ -929,11 +929,11 @@ Reveal.addEventListener( 'overviewhidden', function( event ) { /* ... */ } );
 Reveal.toggleOverview();
 ```
 
-### Fullscreen mode
+### Fullscreen Mode
 
 Just press »F« on your keyboard to show your presentation in fullscreen mode. Press the »ESC« key to exit fullscreen mode.
 
-### Embedded media
+### Embedded Media
 
 Add `data-autoplay` to your media element if you want it to automatically start playing when the slide is shown:
 
@@ -945,11 +945,11 @@ If you want to enable or disable autoplay globally, for all embedded media, you 
 
 Note that embedded HTML5 `<video>`/`<audio>` and YouTube/Vimeo iframes are automatically paused when you navigate away from a slide. This can be disabled by decorating your element with a `data-ignore` attribute.
 
-### Embedded iframes
+### Embedded Iframes
 
 reveal.js automatically pushes two [post messages](https://developer.mozilla.org/en-US/docs/Web/API/Window.postMessage) to embedded iframes. `slide:start` when the slide containing the iframe is made visible and `slide:stop` when it is hidden.
 
-### Stretching elements
+### Stretching Elements
 
 Sometimes it's desirable to have an element, like an image or video, stretch to consume as much space as possible within a given slide. This can be done by adding the `.stretch` class to an element as seen below:
 
@@ -1003,16 +1003,16 @@ Reveal.initialize({
 Presentations can be exported to PDF via a special print stylesheet. This feature requires that you use [Google Chrome](http://google.com/chrome) or [Chromium](https://www.chromium.org/Home) and to be serving the presentation from a webserver.
 Here's an example of an exported presentation that's been uploaded to SlideShare: http://www.slideshare.net/hakimel/revealjs-300.
 
-### Separate pages for fragments
+### Separate Pages For Fragments
 [Fragments](#fragments) are printed on separate slides by default. Meaning if you have a slide with three fragment steps, it will generate three separate slides where the fragments appear incrementally.
 
 If you prefer printing all fragments in their visible states on the same slide you can set the `pdfSeparateFragments` config option to false.
 
-### Page size
+### Page Size
 
 Export dimensions are inferred from the configured [presentation size](#presentation-size). Slides that are too tall to fit within a single page will expand onto multiple pages. You can limit how many pages a slide may expand onto using the `pdfMaxPagesPerSlide` config option, for example `Reveal.configure({ pdfMaxPagesPerSlide: 1 })` ensures that no slide ever grows to more than one printed page.
 
-### Print stylesheet
+### Print Stylesheet
 
 To enable the PDF print capability in your presentation, the special print stylesheet at [/css/print/pdf.css](https://github.com/hakimel/reveal.js/blob/master/css/print/pdf.css) must be loaded. The default index.html file handles this for you when `print-pdf` is included in the query string. If you're using a different HTML template, you can add this to your HEAD:
 
@@ -1101,13 +1101,13 @@ Note:
 This will only display in the notes window.
 ```
 
-#### Share and Print Speaker Notes
+#### Share And Print Speaker Notes
 
 Notes are only visible to the speaker inside of the speaker view. If you wish to share your notes with others you can initialize reveal.js with the `showNotes` configuration value set to `true`. Notes will appear along the bottom of the presentations.
 
 When `showNotes` is enabled notes are also included when you [export to PDF](https://github.com/hakimel/reveal.js#pdf-export). By default, notes are printed in a box on top of the slide. If you'd rather print them on a separate page, after the slide, set `showNotes: "separate-page"`.
 
-#### Speaker notes clock and timers
+#### Speaker Notes Clock And Timers
 
 The speaker notes window will also show:
 
@@ -1150,7 +1150,7 @@ The multiplex plugin needs the following 3 things to operate:
 2. Client presentations that follow the master
 3. Socket.io server to broadcast events from the master to the clients
 
-#### Master presentation
+#### Master Presentation
 
 Served from a static file server accessible (preferably) only to the presenter. This need only be on your (the presenter's) computer. (It's safer to run the master presentation from your own computer, so if the venue's Internet goes down it doesn't stop the show.) An example would be to execute the following commands in the directory of your master presentation:
 
@@ -1187,7 +1187,7 @@ Reveal.initialize({
 });
 ```
 
-#### Client presentation
+#### Client Presentation
 
 Served from a publicly accessible static file server. Examples include: GitHub Pages, Amazon S3, Dreamhost, Akamai, etc. The more reliable, the better. Your audience can then access the client presentation via `http://example.com/path/to/presentation/client/index.html`, with the configuration below causing them to connect to the socket.io server as clients.
 
@@ -1214,7 +1214,7 @@ Reveal.initialize({
 });
 ```
 
-#### Socket.io server
+#### Socket.io Server
 
 Server that receives the `slideChanged` events from the master presentation and broadcasts them out to the connected client presentations. This needs to be publicly accessible. You can run your own socket.io server with the commands:
 
@@ -1229,7 +1229,7 @@ You are very welcome to point your presentations at the Socket.io server running
 
 For anything mission critical I recommend you run your own server. The easiest way to do this is by installing [now](https://zeit.co/now). With that installed, deploying your own Multiplex server is as easy running the following command from the reveal.js folder: `now plugin/multiplex`.
 
-##### socket.io server as file static server
+##### Socket.io Server As File Static Server
 
 The socket.io server can play the role of static file server for your client presentation, as in the example at [https://reveal-js-multiplex-ccjbegmaii.now.sh/](https://reveal-js-multiplex-ccjbegmaii.now.sh/). (Open [https://reveal-js-multiplex-ccjbegmaii.now.sh/](https://reveal-js-multiplex-ccjbegmaii.now.sh/) in two browsers. Navigate through the slides on one, and the other will update to match.)
 
@@ -1307,7 +1307,7 @@ Reveal.initialize({
 
 Read MathJax's documentation if you need [HTTPS delivery](http://docs.mathjax.org/en/latest/start.html#secure-access-to-the-cdn) or serving of [specific versions](http://docs.mathjax.org/en/latest/configuration.html#loading-mathjax-from-the-cdn) for stability.
 
-#### MathJax in Markdown
+#### MathJax In Markdown
 If you want to include math inside of a presentation written in Markdown you need to wrap the forumla in backticks. This prevents syntax conflicts between LaTeX and Markdown. For example:
 
 ```
